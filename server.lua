@@ -8,6 +8,7 @@ if (GetResourceState("es_extended") == "started") then
     end
 end
 
+--todo define your jobs here!
 local jobs = {"mechanic", "police",}
 
 RegisterServerEvent("SyncAd")
@@ -16,22 +17,22 @@ AddEventHandler('SyncAd', function(adtype, inputText)
 end)
 
 function hasgroup(source)
-local xPlayer = ESX.GetPlayerFromId(source)
-if xPlayer.getGroup() == "superadmin" or "admin" then
-	return true
-else
-	return false
-end
+	local xPlayer = ESX.GetPlayerFromId(source)
+	if xPlayer.getGroup() == "superadmin" or "admin" then
+		return true
+	else
+		return false
+	end
 end
 function hasjob(source)
-	hasjob = false
+	local hasjob = false
 	local xPlayer = ESX.GetPlayerFromId(source)
 	for job, v in pairs(jobs) do
 		if xPlayer.getJob().name == job then
 			hasjob = true 
+		end
 	end
-end
-return hasjob
+	return hasjob
 end
 
 RegisterCommand('ads', function(source, args, rawCommand)
