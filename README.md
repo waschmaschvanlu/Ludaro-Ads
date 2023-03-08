@@ -1,2 +1,2 @@
-# Ludaro-Boilerplate
-a Boilerplate Resource for me to just start scripting stuff! :)
+# Ludaro-Ads
+this is an ESX Script that just does ads, /ads 
