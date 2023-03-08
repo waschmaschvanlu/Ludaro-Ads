@@ -37,7 +37,7 @@ end
 
 RegisterCommand('ads', function(source, args, rawCommand)
 	if args[1] and args[2] and hasjob(source) or hasgroup(source)then
-		TriggerEvent("SyncAd", args[1], args[2])	
+		TriggerEvent("SyncAd", args[1], args[2], source)	
 	elseif args[1] or args[2] == nil then
 		TriggerClientEvent("ShowAds", source)	
 	end
